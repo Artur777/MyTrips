@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="2dp"
+    android:weightSum="1"
+    tools:context=".MemosTableActivity">
+    
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/AntiqueWhite">
+                
+                <TextView
+                    android:id="@+id/id_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Route"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/id_time_start_route"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="03-03-2015/15:28"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="30dp" />
+  
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/id_thumbnail"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="left|center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/biking32"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="false"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp" />
+
+<!--
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/temperature2"
+                android:layout_gravity="center_vertical"
+                android:focusableInTouchMode="false"
+                android:focusable="true"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="60dp" />
+-->
+
+            <TextView
+                android:id="@+id/id_average_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentLeft="false"
+                android:maxLines="3"
+                android:singleLine="false"
+                android:text=" 6 km/h"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="85dp"
+                android:textColor="@color/BlueViolet"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_marginTop="67dp" />
+<!--
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/hum1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="60dp" />
+-->
+
+            <TextView
+                android:id="@+id/id_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentLeft="false"
+                android:maxLines="3"
+                android:text="20 steps"
+                android:textColor="@color/Green"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="230dp"
+                android:textSize="18dp"
+                android:layout_marginTop="67dp" />
+            
+            <TextView
+                android:id="@+id/id_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="30dp"
+                android:maxLines="1"
+                android:text=" 1 km "
+                android:fontFeatureSettings="bold"
+                android:textColor="@color/Blue"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_gravity="center_vertical" />
+
+
+            <TextView
+                android:id="@+id/id_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="230dp"
+                android:layout_marginTop="30dp"
+                android:maxLines="1"
+                android:text="20 min"
+                android:fontFeatureSettings="bold"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/DarkOrange"
+                android:layout_gravity="center_vertical" />
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
