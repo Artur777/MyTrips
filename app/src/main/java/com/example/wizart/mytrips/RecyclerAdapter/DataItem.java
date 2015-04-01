@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 
 import com.example.wizart.mytrips.ActiveAndroidDb.Trip;
 import com.example.wizart.mytrips.MapsActivity;
+import com.example.wizart.mytrips.Parse.TripP;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -65,6 +66,20 @@ public class DataItem {
         this.Steps=String.valueOf(trip.getSteps());
 
     }
+
+    public void setData(TripP trip) {
+        this.elapsedTime= trip.getElapsedTime();
+        this.AveragePace= trip.getAverageSpeed();
+        this.startTime= String.valueOf(trip.getStartTime());
+        this.endTime= String.valueOf(trip.getEndTime());
+
+//        this.Distance= String.valueOf(trip.getDistance());
+        this.Distance= MapsActivity.formatDistance(trip.getDistance());
+        this.Calories=String.valueOf(trip.getCalories());
+        this.Steps=String.valueOf(trip.getSteps());
+
+    }
+
 }
 
 

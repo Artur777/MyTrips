@@ -20,8 +20,11 @@ import com.example.wizart.mytrips.ActiveAndroidDb.Trip;
 import com.example.wizart.mytrips.Parse.TripP;
 import com.example.wizart.mytrips.RecyclerAdapter.DataItem;
 import com.example.wizart.mytrips.RecyclerAdapter.MyRecyclerAdapter;
+import com.parse.FindCallback;
+import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,16 +118,31 @@ public class TripTableActivity extends Activity {
                 mDataItem.add(rowElement);
             }
         }
+
         if(readFromParse) {
 
-            ParseQueryAdapter.QueryFactory<TripP> factory = new ParseQueryAdapter.QueryFactory<TripP>() {
-                public ParseQuery<TripP> create() {
-                    ParseQuery<TripP> query = TripP.getQuery();
-                    query.orderByDescending("createdAt");
-                    query.fromLocalDatastore();
-                    return query;
+//            ParseQueryAdapter.QueryFactory<TripP> factory = new ParseQueryAdapter.QueryFactory<TripP>() {
+//                public ParseQuery<TripP> create() {
+//                    ParseQuery<TripP> query = TripP.getQuery();
+//                    query.orderByDescending("createdAt");
+//                    query.fromLocalDatastore();
+//                    return query;
+//                }
+//            };
+
+            ParseQuery<TripP> query = ParseQuery.getQuery(TripP.class);
+//            query.whereLessThanOrEqualTo("rupees", ParseUser.getCurrentUser().get("rupees"));
+            query.orderByDescending("createdAt");
+            query.findInBackground(new FindCallback<TripP>() {
+                @Override
+                public void done(List<TripP> results, ParseException e) {
+                    for (TripP t : results) {
+                        DataItem rowElement = new DataItem();
+                        rowElement.setData(t);
+                        mDataItem.add(rowElement);
+                    }
                 }
-            };
+            });
 
         }
 

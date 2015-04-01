@@ -250,7 +250,7 @@ public class MapsActivity extends ActionBarActivity implements //FragmentActivit
         } else {
             Toast.makeText(this, "Count sensor not available!", Toast.LENGTH_LONG).show();
         }
-        saveToParse();
+//        saveToParse();
     }
 
 
@@ -1255,10 +1255,10 @@ public class MapsActivity extends ActionBarActivity implements //FragmentActivit
             public void done(ParseException e) {
                 if (e == null) {
 //                    setResult(Activity.RESULT_OK);
-                    Toast.makeText(getApplicationContext(), "Data saved to parse: " + e.getMessage(), LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(), "Data saved to parse: ", Toast.LENGTH_LONG).show();
 
                 } else {
-                    Toast.makeText(getApplicationContext(),"Error saving: " + e.getMessage(),LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Error saving: " + e.getMessage(),Toast.LENGTH_LONG).show();
                 }
             }
 
