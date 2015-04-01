@@ -4,6 +4,8 @@ _____MET Value  x  3.5  x  _____kg body weight  �  200 = calories burned per m
     Running 6 MPH: 10 METS
      Sleeping 1 MET
  */
+// This is my change for testing VCS integration
+
 
 package com.example.wizart.mytrips;
 
